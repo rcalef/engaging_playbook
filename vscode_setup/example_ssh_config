@@ -1,0 +1,16 @@
+Host eng
+    User YOUR_NAME_HERE
+    HostName orcd-login003.mit.edu
+    ServerAliveInterval 60
+    ServerAliveCountMax 30
+
+Host engnode
+    HostName node2803
+    ProxyJump eng
+    User YOUR_NAME_HERE
+    PreferredAuthentications publickey
+    PasswordAuthentication no
+    # Replace with the path to your private key
+    IdentityFile /path/to/home/.ssh/id_rsa
+    ServerAliveInterval 60
+    ServerAliveCountMax 30
