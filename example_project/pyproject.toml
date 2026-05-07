@@ -1,0 +1,22 @@
+[project]
+name = "example-project"
+version = "0.1.0"
+description = "Example python project with uv dependency management"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    {name = "Robert Calef", email = "rcalef@mit.edu"},
+]
+dependencies = [
+    "ninja>=1.13.0",
+    "numpy>=2.4.4",
+    "torch>=2.11.0",
+]
+
+[project.optional-dependencies]
+flash = [
+    "flash-attn==2.8.3",
+]
+
+[tool.uv]
+no-build-isolation-package = ["flash-attn"]
